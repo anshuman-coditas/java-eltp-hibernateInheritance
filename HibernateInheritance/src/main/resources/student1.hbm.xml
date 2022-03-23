@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.Student" table="StuInfo_Second" >
+        <id name="id">
+            <generator class="assigned"></generator>
+        </id>
+        <property name="name"></property>
+        <union-subclass name="com.DayScholar" table="Dstu_Second" >
+            <property name="vehicle"></property>
+            <property name="no_of_hrs"></property>
+        </union-subclass>
+        <union-subclass name="com.Hosteller" table="Hstu_Second">
+            <property name="no_of_hrs"></property>
+        </union-subclass>
+    </class>
+</hibernate-mapping>
